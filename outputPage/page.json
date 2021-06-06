@@ -1,0 +1,62 @@
+[
+  {
+    "sidebarItem": {
+      "name": "Test",
+      "link": "test-link"
+    },
+    "about-project": {
+      "Test": {
+        "link": "test-link",
+        "mainTitle": "Test title",
+        "titleTextTitles": [
+          "FirstTitle",
+          "SecondTitle"
+        ],
+        "textsImages": [
+          {
+            "paragraphs": [
+              "Lorem 1,2,3",
+              "Korem 2,3,4",
+              "Bayan 543"
+            ],
+            "images": [
+              {
+                "src": "/images/htc-vive-cosmos-elite.png",
+                "alt": "kek"
+              },
+              {
+                "src": "/images/htc-vive-cosmos-elite.png",
+                "alt": "kek"
+              },
+              {
+                "src": "/images/htc-vive-cosmos-elite.png",
+                "alt": "kek"
+              }
+            ]
+          },
+          {
+            "paragraphs": [
+              "Lorem 3,4,5",
+              "dsadsa 2,3,4",
+              "dsadsadasd 543"
+            ],
+            "images": [
+              {
+                "src": "/images/htc-vive-cosmos-elite.png",
+                "alt": "kek"
+              },
+              {
+                "src": "/images/htc-vive-cosmos-elite.png",
+                "alt": "kek"
+              },
+              {
+                "src": "/images/htc-vive-cosmos-elite.png",
+                "alt": "kek"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+]

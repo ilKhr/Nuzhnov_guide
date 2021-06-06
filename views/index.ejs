@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%=page.mainTitle %></title>
+    <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="/css/style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <%- include("assets/header.ejs") %>
+    <div class="container">
+      <div class="content">
+        <%- include("assets/sidebar.ejs") %> <%- include("assets/main.ejs") %>
+      </div>
+    </div>
+    <button class="back_to_top">↑</button>
+  </body>
+  <script src="/js/script.js"></script>
+</html>

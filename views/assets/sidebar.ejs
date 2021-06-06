@@ -1,0 +1,18 @@
+<aside>
+  <div class="block sidebar">
+    <div class="sidebar-link-typography-title-wrapper">
+      <h3 class="sidebar-title-typography">О проекте</h3>
+    </div>
+    <nav>
+      <ul>
+        <% static.header.find(item=>item.link.includes(route.split("/")[1])).sidebar.sidebarItems.forEach((sidebarItem)=>{ %>
+        <li>
+          <a class="nav-link-typography <%= route.split("/")[2]===sidebarItem.link ? 'underline' : null%>" href="<%=sidebarItem.link%>"
+            ><%= sidebarItem.name %></a
+          >
+        </li>
+        <% }); %>
+      </ul>
+    </nav>
+  </div>
+</aside>

@@ -1,0 +1,62 @@
+header{
+    width: 100%;
+    height: 58px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: var(--turquoise);
+}
+
+.header-container{
+    max-width: var(--container-width);
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.container{
+    width: 1140px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+.header-icons{
+    width: 78px;
+    height:100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.header-icon__sfedu{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.header-icon__ictis{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.header-nav{
+    height: 100%;
+    max-width: 638px;
+    width: 100%;
+    padding: 6px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-right: 54px;
+}
+
+.header-links{
+    max-width: 638px;
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

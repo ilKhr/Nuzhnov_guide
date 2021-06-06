@@ -1,0 +1,14 @@
+const getRoutes = (staticData, pageData) => {
+  return staticData.header.reduce((acc, item) => {
+    for (const key in pageData[item.link]) {
+      acc[`/${item.link}/${pageData[item.link][key].link}`] = {
+        static: staticData,
+        page: pageData[item.link][key],
+        route: `/${item.link}/${pageData[item.link][key].link}`,
+      };
+    }
+    return acc;
+  }, {});
+};
+
+module.exports = getRoutes;

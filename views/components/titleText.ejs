@@ -1,0 +1,19 @@
+<% page.titleTextTitles.forEach((title, index)=>{ %>
+<section class="titleText-wrapper">
+  <div class="titleText-title-text-wrapper">
+    <div class="titleText-title-wrapper">
+      <h3 class="titleText-title-typography"><%= title %></h3>
+    </div>
+    <% page.textsImages[index].paragraphs.forEach((paragraph)=>{ %>
+    <div class="titleText-text-wrapper titleText-text-typography">
+      <p><span><%=paragraph%></span></p>
+    </div>
+    <% }); %>
+  </div>
+  <% console.log(page.textsImages[index]) %> <% if
+  (page.textsImages[index].images && page.textsImages[index].images.length) { %>
+  <% page.textsImages[index].images.forEach(({src, alt}) =>{ %>
+  <img class="titleText-image" src="<%= src %>" alt="<%= alt %>" />
+  <% }) %> <% } %>
+</section>
+<% }); %>
