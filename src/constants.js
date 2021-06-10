@@ -1,6 +1,6 @@
 module.exports = {
   aboutPage: {
-    name: "О проекте",
+    name: "Об учебном заведении",
     link: "about-project",
     sidebar: [
       { name: "Предмет", link: "subject" },
@@ -15,7 +15,12 @@ module.exports = {
       { name: "VR очки", link: "vr-glasses" },
       { name: "VR контроллеры", link: "vr-controllers" },
       { name: "VR датчики", link: "vr-sensors" },
+      { name: "Где можно использовать VR", link: "where-use-vr" },
       { name: "HTC VIVE Cosmos Elite", link: "htc-vive-cosmos-elite" },
+      { name: "VR Shinecon", link: "vr-shinecon" },
+      { name: "Shinecon", link: "shinecon" },
+      { name: "SmarTerra VR2 Mark 2", link: "smarterra-vr2-mark-2" },
+      { name: "HTC Vive Cosmos", link: "htc-vive-cosmos" },
     ],
   },
 

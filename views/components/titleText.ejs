@@ -6,13 +6,13 @@
     </div>
     <% page.textsImages[index].paragraphs.forEach((paragraph)=>{ %>
     <div class="titleText-text-wrapper titleText-text-typography">
-      <p><span><%=paragraph%></span></p>
+      <p><span><%-paragraph%></span></p>
     </div>
     <% }); %>
   </div>
-  <% console.log(page.textsImages[index]) %> <% if
-  (page.textsImages[index].images && page.textsImages[index].images.length) { %>
-  <% page.textsImages[index].images.forEach(({src, alt}) =>{ %>
+  <% console.log(page) %> <% if (page.textsImages[index].images &&
+  page.textsImages[index].images.length) { %> <%
+  page.textsImages[index].images.forEach(({src, alt}) =>{ %>
   <img class="titleText-image" src="<%= src %>" alt="<%= alt %>" />
   <% }) %> <% } %>
 </section>

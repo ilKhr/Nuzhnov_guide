@@ -3,6 +3,7 @@ const getRoutes = (staticData, pageData) => {
     for (const key in pageData[item.link]) {
       acc[`/${item.link}/${pageData[item.link][key].link}`] = {
         static: staticData,
+        sidebarName: item.name,
         page: pageData[item.link][key],
         route: `/${item.link}/${pageData[item.link][key].link}`,
       };
