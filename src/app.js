@@ -1,10 +1,24 @@
 const express = require("express");
 const getRoutes = require("./utils/getRoutes");
-const staticDataLinks = require("./constants");
+const { staticDataLinks, pageDataLinks } = require("./constants");
+
+const generateStaticData = (staticDataLinks) => {
+  const result = Object.entries(staticDataLinks).map(([key, value], index) => {
+    return {
+      name: value.name,
+      link: value.link,
+      sidebar: {
+        sidebarItems: [...value.sidebar],
+      },
+    };
+  });
+  return result;
+};
 
 const staticData = {
   header: [
-    {
+    ...generateStaticData(staticDataLinks),
+    /* {
       name: staticDataLinks.aboutPage.name,
       link: staticDataLinks.aboutPage.link,
       sidebar: {
@@ -91,12 +105,37 @@ const staticData = {
           },
         ],
       },
-    },
+    }, */
   ],
 };
 
-const pageData = {
-  [staticDataLinks.aboutPage.link]: {
+const generatePageData = (pageDataLinks) => {
+  const result = Object.entries(pageDataLinks).reduce(
+    (acc, [key, value], index) => {
+      const element = value.map((item, childIndex) => {
+        return {
+          link: staticDataLinks[key].sidebar[childIndex].link,
+          mainTitle: staticDataLinks[key].sidebar[childIndex].name,
+          titleTextTitles: item.titleTextTitles.slice(),
+          textsImages: [...item.textsImages],
+        };
+      });
+
+      acc[staticDataLinks[key].link] = {
+        ...element,
+      };
+
+      return acc;
+    },
+    {}
+  );
+
+  return result;
+};
+
+const pageData = generatePageData(pageDataLinks);
+
+/* [staticDataLinks.aboutPage.link]: {
     subject: {
       link: staticDataLinks.aboutPage.sidebar[0].link,
       mainTitle: staticDataLinks.aboutPage.sidebar[0].name,
@@ -157,48 +196,7 @@ const pageData = {
         },
         {
           paragraphs: [
-            '<a href="https://sfedu.ru/www/stat_pages22.show?p=UNI/N11900/D">Информация о учебных подразделениях</a>',
-          ],
-        },
-      ],
-    },
-    Test: {
-      link: "test-link",
-      mainTitle: "Test title",
-      titleTextTitles: ["FirstTitle", "SecondTitle"],
-      textsImages: [
-        {
-          paragraphs: ["Lorem 1,2,3", "Korem 2,3,4", "Bayan 543"],
-          images: [
-            {
-              src: "/images/htc-vive-cosmos-elite.png",
-              alt: "kek",
-            },
-            {
-              src: "/images/htc-vive-cosmos-elite.png",
-              alt: "kek",
-            },
-            {
-              src: "/images/htc-vive-cosmos-elite.png",
-              alt: "kek",
-            },
-          ],
-        },
-        {
-          paragraphs: ["Lorem 3,4,5", "dsadsa 2,3,4", "dsadsadasd 543"],
-          images: [
-            {
-              src: "/images/htc-vive-cosmos-elite.png",
-              alt: "kek",
-            },
-            {
-              src: "/images/htc-vive-cosmos-elite.png",
-              alt: "kek",
-            },
-            {
-              src: "/images/htc-vive-cosmos-elite.png",
-              alt: "kek",
-            },
+            '<a href="https://sfedu.ru/www/stat_pages22.show?p=UNI/N11900/D" target="_blank" >Информация о учебных подразделениях</a>',
           ],
         },
       ],
@@ -420,10 +418,42 @@ const pageData = {
     subject: {
       link: staticDataLinks.sourcesUsed.sidebar[0].link,
       mainTitle: staticDataLinks.sourcesUsed.sidebar[0].name,
-      titleTextTitles: ["TITLE:"],
+      titleTextTitles: ["Информационные ресурсы:", "Интернет магазины:"],
       textsImages: [
         {
-          paragraphs: ["FIrst paragraphs", "Second paragraphs"],
+          paragraphs: [
+            '<a href="https://ktc.ua/ru/blog/vr_ochki_kak_vybrat_i_polzovatsya_na_chto_obratit_vnimanie_i_ne_vredyat_li_oni_zreniyu.html" target="_blank" >' +
+              "* VR-очки: как выбрать и пользоваться, на что обратить внимание и не вредят ли они зрению" +
+              "</a>",
+            '<a href="https://make-3d.ru/articles/kak-rabotayut-vr-ochki/" target="_blank" >' +
+              "* Как работают VR-очки" +
+              "</a>",
+            '<a href="https://www.boonget.ru/articles/kak_ustroeny_ochki_virtualnoj_realnosti/" target="_blank" >' +
+              "* Как устроены очки виртуальной реальности?" +
+              "</a>",
+            '<a href="https://tlum.ru/news/cto-takoe-vr/" target="_blank" >' +
+              "* ЧТО ТАКОЕ VR?" +
+              "</a>",
+          ],
+        },
+        {
+          paragraphs: [
+            '<a href="https://www.dns-shop.ru/product/2073372aafea3330/ocki-virtualnoj-realnosti-vr-shinecon-sc-g05c/" target="_blank" >' +
+              "* Очки виртуальной реальности VR Shinecon SC-G05C" +
+              "</a>",
+            '<a href="https://www.dns-shop.ru/product/c274fb3960863330/ocki-virtualnoj-realnosti-shinecon-sc-y005/" target="_blank" >' +
+              "* Очки виртуальной реальности Shinecon SC-Y005" +
+              "</a>",
+            '<a href="https://www.dns-shop.ru/product/4789cc3bafea3330/ocki-virtualnoj-realnosti-vr-shinecon-sc-g01/" target="_blank" >' +
+              "* Очки виртуальной реальности VR Shinecon SC-G01" +
+              "</a>",
+            '<a href="https://www.dns-shop.ru/product/273e18ad68f61b80/ocki-virtualnoj-realnosti-vr-shinecon-sc-g01p/" target="_blank" >' +
+              "* Очки виртуальной реальности VR Shinecon SC-G01P" +
+              "</a>",
+            '<a href="https://www.citilink.ru/product/ochki-virtualnoi-realnosti-htc-vive-cosmos-chernyi-sinii-99harl027-00-1199518/?region_id=123057&gclid=Cj0KCQjw8IaGBhCHARIsAGIRRYoWtYO5HviYfty6DK_lhn2J_1eYOUHrOS5lCJjx18-Hp3OM5EZBC0caAlVBEALw_wcB" target="_blank" >' +
+              "* Шлем виртуальной реальности HTC Vive Cosmos" +
+              "</a>",
+          ],
         },
       ],
     },
@@ -441,10 +471,11 @@ const pageData = {
         },
       ],
     },
-  },
-};
+  }, */
 
 const routesDataObject = getRoutes(staticData, pageData);
+
+// console.log(routesDataObject);
 
 const app = express();
 
@@ -458,6 +489,9 @@ app.get("/", (req, res) => {
 
 staticData.header.forEach((item) => {
   app.get(`/${item.link}`, (req, res) => {
+    // console.log(
+    //   Object.keys(routesDataObject).find((key) => key.includes(item.link))
+    // );
     return res.redirect(
       Object.keys(routesDataObject).find((key) => key.includes(item.link))
     );
@@ -465,7 +499,7 @@ staticData.header.forEach((item) => {
 });
 
 for (const route in routesDataObject) {
-  console.log(routesDataObject[route]);
+  console.log(route);
   app.get(route, (req, res) => {
     res.render("index", routesDataObject[route]);
   });
