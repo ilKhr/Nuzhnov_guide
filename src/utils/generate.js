@@ -38,7 +38,7 @@ const generatePageData = ({
 };
 
 const generateData = {
-  headerLink: "about-project",
+  headerLink: "discipline",
   nameSidebarLink: "Test",
   sidebarLinkPage: "test-link",
   pageTitle: "Test title",

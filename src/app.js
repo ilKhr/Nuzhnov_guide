@@ -51,7 +51,7 @@ app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 
 app.get("/", (req, res) => {
-  return res.redirect("/about-project/subject");
+  return res.redirect("/discipline/introduction");
 });
 
 staticData.header.forEach((item) => {
