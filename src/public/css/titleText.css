@@ -1,5 +1,6 @@
 .titleText-wrapper{
-padding: 10px;
+padding: 20px 90px;
+margin-bottom: 25px;
 }
 
 .titleText-title-wrapper{
@@ -7,7 +8,7 @@ padding: 10px;
 }
 
 .titleText-title-text-wrapper{
-    margin-bottom: 25px;
+    margin-bottom: 10px;
 }
 
 

@@ -1,36 +1,36 @@
 .nav-link-typography {
-  font-family: Montserrat;
+  font-family: Fira Sans;
   font-style: normal;
   font-weight: bold;
-  font-size: 12px;
-  line-height: 15px;
+  font-size: 14px;
+  line-height: 20px;
   display: block;
   color: #000000;
 }
 
 .sidebar-title-typography{
-    font-family: Montserrat;
+    font-family: Fira Sans;
 font-style: normal;
 font-weight: bold;
-font-size: 14px;
+font-size: 16px;
 line-height: 17px;
 
 color: #000000;
 }
 
 .sidebar-link-typography{
-    font-family: Montserrat;
+    font-family: Fira Sans;
 font-style: normal;
 font-weight: bold;
-font-size: 12px;
-line-height: 15px;
+font-size: 14px;
+line-height: 20px;
 
 
 color: #000000;
 }
 
 .main-title-typography{
-  font-family: Montserrat;
+  font-family: Fira Sans;
   font-style: normal;
   font-weight: bold;
   font-size: 18px;
@@ -40,19 +40,19 @@ color: #000000;
 }
 
 .titleText-title-typography{
-  font-family: Montserrat;
+  font-family: Fira Sans;
 font-style: normal;
 font-weight: bold;
-font-size: 14px;
+font-size: 16px;
 line-height: 17px;
 color: #000000;
 }
 
 .titleText-text-typography{
-  font-family: Montserrat;
+  font-family: Fira Sans;
 font-style: normal;
 font-weight: normal;
-font-size: 14px;
+font-size: 16px;
 line-height: 17px;
 
 color: #000000;
